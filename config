@@ -2,19 +2,13 @@
 
 set $mod Mod4
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
 font pango:monospace 8, FontAwesome 8
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
 
-# Before i3 v4.8, we used to recommend this one as the default:
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, its unicode glyph coverage is limited, the old
-# X core fonts rendering does not support right-to-left and this being a bitmap
-# font, it doesn’t scale on retina/hidpi displays.
+set $bg-color 	         #201912
+set $inactive-bg-color   #201912
+set $text-color          #97A09C
+set $inactive-text-color #A4886C
+set $urgent-bg-color     #A4886C
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -150,31 +144,37 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
- colors {
-        background #222222 
-        statusline #477AB3 #that neon blue
-        separator #666666
 
-        focused_workspace  #477AB3 #477ab3 #ffffff
-        active_workspace   #477AB3 #477AB3 #ffffff
-        inactive_workspace #222222 #222222 #888888
-        urgent_workspace   #2f343a #900000 #ffffff
-    }
-	font pango:monospace 8, FontAwesome 10
-	tray_output none
-	status_command i3status
-}
+# i3bar
+bar {
+	position	top
+	status_command	i3status
+        tray_output	none
+	tray_padding 1
+	separator_symbol " "
+#	strip_workspace_numbers yes
+	colors {
+		statusline	$inactive-text-color
+		background 	$bg-color
+		#                  border             	background         	text
+		focused_workspace  $inactive-text-color $inactive-text-color 	$bg-color
+		inactive_workspace $inactive-bg-color 	$inactive-bg-color 	$inactive-text-color
+		urgent_workspace   $urgent-bg-color   	$urgent-bg-color   	$bg-color
+	}	
+}	 
+
+# window colors
+#                       border              background         text                 indicator
+client.focused          $bg-color           $bg-color          $text-color          #00ff00
+client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
+client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
+
 
 ##### My config #####
 
 # App autostart with preconfigured layout
 exec_always --no-startup-id feh --bg-center /home/mantasrimgaila/Pictures/got-icescream.png
-exec --no-startup-id nm-applet
-#exec --no-startup-id "i3-msg 'workspace Term ; append_layout /home/micq/.i3/workspace-6.json; exec urxvt -title micq; exec urxvt -hold -title screenfetch -e screenfetch; exec urxvt -hold -title htop -e htop'"
-#exec --no-startup-id "i3-msg 'workspace Term ; append_layout /home/micq/.i3/scratchpad.json; exec urxvt -name urxvtscratchpad; workspace Term '"
 exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/slack; workspace 1; exec /usr/local/bin/termite;'
 #exec --no-startup-id xautolock -time 5 -bell 0 -detectsleep -locker ~/.config/i3/scripts/lock -notify 5 -notifier "notify-send -t 1000 -i ~/.config/i3/icons/lock-icon.png 'Locking Screen...'"
 
