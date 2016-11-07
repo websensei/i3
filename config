@@ -86,9 +86,9 @@ bindsym $mod+a focus parent
 
 # workspace settings
 
-set $workspace1 "$"
-set $workspace2 "www"
-set $workspace3 "#"
+set $workspace1 1:
+set $workspace2 2:
+set $workspace3 3:
 set $workspace4 "Cloud"
 set $workspace5 "Code"
 
@@ -101,7 +101,7 @@ assign [class="(?i)firefox"] → $workspace2
 assign [class="(?i)chromium"] → $WS2
 assign [class="(?i)transmission-gtk"] → $WS2
 assign [class="(?i)gimp"] → $WS8
-
+assign [title="Java iKVM Viewer"] → $WS2
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -163,7 +163,7 @@ bar {
         inactive_workspace #222222 #222222 #888888
         urgent_workspace   #2f343a #900000 #ffffff
     }
-	font pango:monospace 8
+	font pango:monospace 8, FontAwesome 10
 	tray_output none
 	status_command i3status
 }
