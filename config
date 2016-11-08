@@ -95,7 +95,7 @@ assign [class="(?i)firefox"] → $workspace2
 assign [class="(?i)chromium"] → $WS2
 assign [class="(?i)transmission-gtk"] → $WS2
 assign [class="(?i)gimp"] → $WS8
-assign [title="Java iKVM Viewer"] → $WS2
+assign [class="(?i)Java iKVM Viewer"] → $workspace2
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -148,10 +148,12 @@ bindsym $mod+r mode "resize"
 # i3bar
 bar {
 	position	top
-	status_command	i3status
-        tray_output	none
-	tray_padding 1
-	separator_symbol " "
+#	status_command	i3bar
+
+    	status_command i3status -c ~/.config/i3/i3status.conf
+#        tray_output	none
+#	tray_padding 1
+#	separator_symbol " "
 #	strip_workspace_numbers yes
 	colors {
 		statusline	$inactive-text-color
@@ -189,6 +191,7 @@ new_window pixel 1
 for_window [class="chromium"] border none
 for_window [class="slack"] border none
 for_window [instance="urxvtscratchpad"] move scratchpad
+for_window [class="(?i)Java iKVM Viewer"] floating enable
 
 # Custom key bindings
 bindsym $mod+m bar mode toggle

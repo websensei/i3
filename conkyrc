@@ -1,6 +1,0 @@
-## Stuff after 'TEXT' will be formatted on screen
-default_color=white
-TEXT
-
-$kernel  $acpitemp ${mem} ${if_up wlp2s0}${addr wlp2s0}  ${downspeedf wlp2s0} KiB/s  ${time %d-%m-%Y} ${time %H:%M}
-
