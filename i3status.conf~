@@ -15,7 +15,7 @@ general {
 }
 
 order += "cpu_usage"
-#order += "cpu_temperature 0"
+order += "cpu_temperature 0"
 order += "load"
 #order += "ipv6"
 order += "disk /"
@@ -76,10 +76,10 @@ cpu_usage {
 #	format = "  %usage"
 }
 
-#cpu_temperature 0{
-#	format = "%degress C"
-#	max_treshold: 45
-#}
+cpu_temperature 0{
+	format = "%degress C"
+	max_treshold: 45
+}
 
 load {
         format = "  %1min"
