@@ -82,19 +82,19 @@ bindsym $mod+a focus parent
 
 set $workspace1 1:
 set $workspace2 2:
-set $workspace3 3:
-set $workspace4 "Cloud"
-set $workspace5 "Code"
+set $workspace3 3:
+set $workspace4 4:
+set $workspace5 5:
+set &workspace6 6:
 
 assign [class="slack"] $workspace1
-assign [class="(?i)libreoffice"] → $WS8
-assign [class="(?i)gedit"] → $WS5
-assign [class="(?i)skype"] → $WS7
+assign [class="(?i)nautilus"] → $workspace4
+assign [class="(?i)audacious"] → $workspace5
 assign [class="(?i)feh"] → $WS6
 assign [class="(?i)firefox"] → $workspace2
-assign [class="(?i)chromium"] → $WS2
+assign [class="(?i)chromium"] → $workspace2
 assign [class="(?i)transmission-gtk"] → $WS2
-assign [class="(?i)gimp"] → $WS8
+assign [class="(?i)gimp"] → $workspace6
 assign [class="(?i)Java iKVM Viewer"] → $workspace2
 
 # switch to workspace
@@ -111,6 +111,7 @@ bindsym $mod+Shift+3 move container to workspace $workspace3
 bindsym $mod+Shift+4 move container to workspace $workspace4
 bindsym $mod+Shift+5 move container to workspace $workspace5
 
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -122,9 +123,6 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
         bindsym j resize shrink width 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
@@ -148,8 +146,6 @@ bindsym $mod+r mode "resize"
 # i3bar
 bar {
 	position	top
-#	status_command	i3bar
-
     	status_command i3status -c ~/.config/i3/i3status.conf
 #        tray_output	none
 #	tray_padding 1
@@ -173,16 +169,10 @@ client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-col
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
 
 
-##### My config #####
-
 # App autostart with preconfigured layout
+exec --no-startup-id "i3-msg 'workspace 1; append_layout ~/.config/i3/ws1.json'"
 exec_always --no-startup-id feh --bg-center /home/mantasrimgaila/Pictures/got-icescream.png
 exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/slack; workspace 1; exec /usr/local/bin/termite;'
-#exec --no-startup-id xautolock -time 5 -bell 0 -detectsleep -locker ~/.config/i3/scripts/lock -notify 5 -notifier "notify-send -t 1000 -i ~/.config/i3/icons/lock-icon.png 'Locking Screen...'"
-
-
-# Lock screen:
-bindsym $mod+crtl+l exec ~/.config/i3/scripts/lock
 
 
 # Window decorations
@@ -204,9 +194,15 @@ bindsym $mod+grave scratchpad show
 bindsym $mod+Shift+Return mode "$mode_system"
 set $mode_system (l)ock, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
-	bindsym l exec --no-startup-id i3lock -c 000000 -i /home/mantasrimgaila/Pictures/got-icescream.png 
-	bindsym r exec --no-startup-id reboot
-	bindsym Shift+s exec --no-startup-id shutdown -P now
+#	bindsym $mod+l exec --no-startup-id i3lock -c 000000 -i /home/mantasrimgaila/Pictures/lock.jpg 
+#	bindsym Shift+r exec --no-startup-id reboot
+#	bindsym Shift+s exec --no-startup-id shutdown -P now
+    	bindsym $mod+l exec --no-startup-id i3exit lock, mode "default"
+    	bindsym e exec --no-startup-id i3exit logout, mode "default"
+    	bindsym s exec --no-startup-id i3exit suspend, mode "default"
+    	bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+    	bindsym r exec --no-startup-id i3exit reboot, mode "default"
+    	bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
 	
 	# exit system mode: "Enter" or "Escape"
 	bindsym Return mode "default"

@@ -1,0 +1,90 @@
+// vim:ts=4:sw=4:et
+{
+    // splitv split container with 2 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.5,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 1,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 338,
+               "width": 562,
+               "x": 0,
+               "y": 0
+            },
+            "name": "mutt  /home/mantasrimgaila/.config/i3",
+            "percent": 0.5,
+            "swallows": [
+               {
+               // "class": "^Termite$",
+               // "instance": "^termite$",
+               // "title": "^mutt\\ \\ \\/home\\/mantasrimgaila\\/\\.config\\/i3$",
+               // "transient_for": "^$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            // splitv split container with 1 children
+            "border": "pixel",
+            "floating": "auto_off",
+            "layout": "splitv",
+            "percent": 0.5,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "pixel",
+                    "current_border_width": 1,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 338,
+                       "width": 562,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "i3-save-tree  /home/mantasrimgaila",
+                    "percent": 1,
+                    "swallows": [
+                       {
+                       // "class": "^Termite$",
+                       // "instance": "^termite$",
+                       // "title": "^i3\\-save\\-tree\\ \\ \\/home\\/mantasrimgaila$",
+                       // "transient_for": "^$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        }
+    ]
+}
+
+{
+    "border": "pixel",
+    "current_border_width": 1,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 750,
+       "width": 682,
+       "x": 684,
+       "y": 18
+    },
+    "name": "Slack - Cherry Servers",
+    "percent": 0.5,
+    "swallows": [
+       {
+       // "class": "^Slack$",
+       // "instance": "^slack$",
+       // "title": "^Slack\\ \\-\\ Cherry\\ Servers$",
+       // "transient_for": "^$",
+       // "window_role": "^browser\\-window$"
+       }
+    ],
+    "type": "con"
+}
+
