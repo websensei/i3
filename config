@@ -14,7 +14,8 @@ set $urgent-bg-color     #A4886C
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec /usr/local/bin/termite
+bindsym $mod+Return exec gnome-terminal
+#bindsym $mod+Return exec /usr/local/bin/termite
 
 # kill focused window
 bindsym $mod+Shift+q kill
