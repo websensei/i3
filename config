@@ -150,7 +150,7 @@ bar {
     	status_command i3status -c ~/.config/i3/i3status.conf
 #        tray_output	none
 #	tray_padding 1
-	separator_symbol "  "
+	separator_symbol "   "  # "  "
 #	strip_workspace_numbers yes
 	colors {
 		statusline	$inactive-text-color
@@ -198,7 +198,7 @@ mode "$mode_system" {
 #	bindsym $mod+l exec --no-startup-id i3lock -c 000000 -i /home/mantasrimgaila/Pictures/lock.jpg 
 #	bindsym Shift+r exec --no-startup-id reboot
 #	bindsym Shift+s exec --no-startup-id shutdown -P now
-    	bindsym $mod+l exec --no-startup-id i3exit lock, mode "default"
+#    	bindsym $mod+l exec --no-startup-id i3exit lock, mode "default"
     	bindsym e exec --no-startup-id i3exit logout, mode "default"
     	bindsym s exec --no-startup-id i3exit suspend, mode "default"
     	bindsym h exec --no-startup-id i3exit hibernate, mode "default"
