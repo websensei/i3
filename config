@@ -2,7 +2,7 @@
 
 set $mod Mod4
 
-font pango:monospace 8, FontAwesome 8
+font pango:monospace 8, FontAwesome 10
 
 set $bg-color 	         #201912
 set $inactive-bg-color   #201912
