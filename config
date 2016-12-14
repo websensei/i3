@@ -2,7 +2,7 @@
 
 set $mod Mod4
 
-font pango:monospace 8, FontAwesome 8
+font pango:monospace 8, FontAwesome 10
 
 set $monL VGA-1
 set $monR HDMI-2
@@ -108,6 +108,7 @@ set $workspace5 5:
 set &workspace6 6:
 
 assign [class="slack"] $workspace1
+assign [class="(?i)pycharm"] → $workspace3
 assign [class="(?i)nautilus"] → $workspace4
 assign [class="(?i)audacious"] → $workspace5
 assign [class="(?i)feh"] → $WS6
@@ -190,8 +191,8 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 
 # App autostart with preconfigured layout
-exec --no-startup-id "i3-msg 'workspace 1; append_layout ~/.config/i3/ws1.json'"
-exec_always --no-startup-id feh --bg-center /home/mantasrimgaila/Pictures/got-icescream.png
+#exec --no-startup-id "i3-msg 'workspace 1; append_layout ~/.config/i3/ws1.json'"
+exec --no-startup-id feh --bg-center /home/mantasrimgaila/Pictures/got-icescream.png
 exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/slack; workspace 1; exec /usr/local/bin/termite;'
 #exec --no-startup-id dual-screen
 
