@@ -4,6 +4,25 @@ set $mod Mod4
 
 font pango:monospace 8, FontAwesome 8
 
+set $monL VGA-1
+set $monR HDMI-2
+
+# variables for workpacenames; 
+# set $ws1L 1:A
+# set $ws1R 11:A
+# set $ws2L 2:B
+# set $ws2R 12:B
+# set $ws3L 3:C
+# set $ws3R 13:C
+
+# # assign workspaces to specific outputs
+# workspace $ws1L output $monL
+# workspace $ws1R output $monR
+# workspace $ws2L output $monL
+# workspace $ws2R output $monR
+# workspace $ws3L output $monL
+# workspace $ws3R output $monR
+
 set $bg-color 	         #201912
 set $inactive-bg-color   #201912
 set $text-color          #97A09C
@@ -174,7 +193,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 exec --no-startup-id "i3-msg 'workspace 1; append_layout ~/.config/i3/ws1.json'"
 exec_always --no-startup-id feh --bg-center /home/mantasrimgaila/Pictures/got-icescream.png
 exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/slack; workspace 1; exec /usr/local/bin/termite;'
-
+#exec --no-startup-id dual-screen
 
 # Window decorations
 hide_edge_borders both
@@ -211,4 +230,6 @@ mode "$mode_system" {
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
 }
+
+exec --no-startup-id xrandr --output HDMI2 --auto --output VGA1 --auto --right-of HDMI2 --output VGA1 --auto --right-of HDMI2
 
