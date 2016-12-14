@@ -92,10 +92,10 @@ assign [class="slack"] $workspace1
 assign [class="(?i)pycharm"] → $workspace3
 assign [class="(?i)nautilus"] → $workspace4
 assign [class="(?i)audacious"] → $workspace5
-assign [class="(?i)feh"] → $workspace6
+assign [class="(?i)feh"] → $WS6
 assign [class="(?i)firefox"] → $workspace2
 assign [class="(?i)chromium"] → $workspace2
-assign [class="(?i)transmission-gtk"] → $workspace2
+assign [class="(?i)transmission-gtk"] → $WS2
 assign [class="(?i)gimp"] → $workspace6
 assign [class="(?i)Java iKVM Viewer"] → $workspace2
 
@@ -105,7 +105,7 @@ bindsym $mod+2 workspace $workspace2
 bindsym $mod+3 workspace $workspace3
 bindsym $mod+4 workspace $workspace4
 bindsym $mod+5 workspace $workspace5
-bindsym $mod+6 workspace $workspace6
+bindsym $mod+5 workspace $workspace6
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace1
@@ -113,7 +113,7 @@ bindsym $mod+Shift+2 move container to workspace $workspace2
 bindsym $mod+Shift+3 move container to workspace $workspace3
 bindsym $mod+Shift+4 move container to workspace $workspace4
 bindsym $mod+Shift+5 move container to workspace $workspace5
-bindsym $mod+Shift+6 move container to workspace $workspace6
+bindsym $mod+Shift+5 move container to workspace $workspace6
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
