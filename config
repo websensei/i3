@@ -4,25 +4,6 @@ set $mod Mod4
 
 font pango:monospace 8, FontAwesome 10
 
-set $monL VGA-1
-set $monR HDMI-2
-
-# variables for workpacenames; 
-# set $ws1L 1:A
-# set $ws1R 11:A
-# set $ws2L 2:B
-# set $ws2R 12:B
-# set $ws3L 3:C
-# set $ws3R 13:C
-
-# # assign workspaces to specific outputs
-# workspace $ws1L output $monL
-# workspace $ws1R output $monR
-# workspace $ws2L output $monL
-# workspace $ws2R output $monR
-# workspace $ws3L output $monL
-# workspace $ws3R output $monR
-
 set $bg-color 	         #201912
 set $inactive-bg-color   #201912
 set $text-color          #97A09C
@@ -105,7 +86,7 @@ set $workspace2 2:
 set $workspace3 3:
 set $workspace4 4:
 set $workspace5 5:
-set &workspace6 6:
+set $workspace6 6:
 
 assign [class="slack"] $workspace1
 assign [class="(?i)pycharm"] → $workspace3
@@ -124,6 +105,7 @@ bindsym $mod+2 workspace $workspace2
 bindsym $mod+3 workspace $workspace3
 bindsym $mod+4 workspace $workspace4
 bindsym $mod+5 workspace $workspace5
+bindsym $mod+5 workspace $workspace6
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace1
@@ -131,7 +113,7 @@ bindsym $mod+Shift+2 move container to workspace $workspace2
 bindsym $mod+Shift+3 move container to workspace $workspace3
 bindsym $mod+Shift+4 move container to workspace $workspace4
 bindsym $mod+Shift+5 move container to workspace $workspace5
-
+bindsym $mod+Shift+5 move container to workspace $workspace6
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -179,8 +161,8 @@ bar {
 		focused_workspace  $inactive-text-color $inactive-text-color 	$bg-color
 		inactive_workspace $inactive-bg-color 	$inactive-bg-color 	$inactive-text-color
 		urgent_workspace   $urgent-bg-color   	$urgent-bg-color   	$bg-color
-	}	
-}	 
+	}
+}
 
 # window colors
 #                       border              background         text                 indicator
@@ -217,7 +199,7 @@ bindsym $mod+Shift+s exec i3lock -c 000000 -i /home/manc/Pictures/lock.jpg
 bindsym $mod+Shift+Return mode "$mode_system"
 set $mode_system (l)ock, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
-#	bindsym $mod+l exec --no-startup-id i3lock -c 000000 -i /home/mantasrimgaila/Pictures/lock.jpg 
+#	bindsym $mod+l exec --no-startup-id i3lock -c 000000 -i /home/mantasrimgaila/Pictures/lock.jpg
 #	bindsym Shift+r exec --no-startup-id reboot
 #	bindsym Shift+s exec --no-startup-id shutdown -P now
 #    	bindsym $mod+l exec --no-startup-id i3exit lock, mode "default"
@@ -226,11 +208,10 @@ mode "$mode_system" {
     	bindsym h exec --no-startup-id i3exit hibernate, mode "default"
     	bindsym r exec --no-startup-id i3exit reboot, mode "default"
 #    	bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
-	
+
 	# exit system mode: "Enter" or "Escape"
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
 }
-
-exec --no-startup-id xrandr --output HDMI2 --auto --output VGA1 --auto --right-of HDMI2 --output VGA1 --auto --right-of HDMI2
-
+# in case you want to use dual screens
+# exec --no-startup-id xrandr --output HDMI2 --auto --output VGA1 --auto --right-of HDMI2 --output VGA1 --auto --right-of HDMI2
