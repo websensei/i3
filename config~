@@ -189,7 +189,7 @@ for_window [class="(?i)Java iKVM Viewer"] floating enable
 
 # Custom key bindings
 bindsym $mod+m bar mode toggle #hide i3status
-bindsym $mod+Shift+e exec i3lock -c 000000 -i /home/manc/Pictures/lock.png
+bindsym $mod+Shift+e exec i3lock -c 000000 -i ~/.config/i3/lock.png
 
 set $mode_system (l)ock, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
