@@ -175,7 +175,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 # App autostart with preconfigured layout
 #exec --no-startup-id "i3-msg 'workspace 1; append_layout ~/.config/i3/ws1.json'"
-exec_always --no-startup-id feh --bg-center ~/.config/i3/got-icescream.png
+exec_always --no-startup-id feh --bg ~/.config/i3/desktop.png
 exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/termite; workspace 1; exec /usr/local/bin/termite;'
 
 # Window decorations

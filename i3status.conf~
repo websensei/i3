@@ -71,8 +71,8 @@ tztime local {
 
 
 cpu_usage {
-#	format = " %usage"
-	format = "  %usage" #requires FontAwesome 4.7
+	format = "  %usage"
+#	format = "  %usage" #requires FontAwesome 4.7
 }
 
 #cpu_temperature 0 {
