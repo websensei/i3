@@ -172,10 +172,10 @@ client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-col
 client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
 
-
 # App autostart with preconfigured layout
 #exec --no-startup-id "i3-msg 'workspace 1; append_layout ~/.config/i3/ws1.json'"
-exec_always --no-startup-id feh --bg ~/.config/i3/desktop.png
+exec --no-startup-id nm-applet
+exec --no-startup-id feh --bg ~/.config/i3/desktop.png
 exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/termite; workspace 1; exec /usr/local/bin/termite;'
 
 # Window decorations
@@ -191,9 +191,12 @@ for_window [class="(?i)Java iKVM Viewer"] floating enable
 bindsym $mod+m bar mode toggle #hide i3status
 bindsym $mod+Shift+e exec i3lock -c 000000 -i ~/.config/i3/lock.png
 
+# toggle tiling / floating
+bindcode $mod+Shift+space floating toggle
+
 set $mode_system (l)ock, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
-#	bindsym $mod+l exec --no-startup-id i3lock -c 000000 -i /home/mantasrimgaila/Pictures/lock.jpg
+#	bindsym $mod+l exec --no-startup-id i3lock -c 000000 -i ~/.config/lock.jpg
 #	bindsym Shift+r exec --no-startup-id reboot
 #	bindsym Shift+s exec --no-startup-id shutdown -P now
 #    	bindsym $mod+l exec --no-startup-id i3exit lock, mode "default"
@@ -208,5 +211,21 @@ mode "$mode_system" {
 	bindsym Escape mode "default"
 }
 
+### Backlight ###
+bindsym XF86MonBrightnessUp exec light -A 10 # Increase Brightness
+bindsym XF86MonBrightnessDown exec light -U 10 # Decrease Brightness
+
+### Other ###
+bindsym Print exec scrot -q 100
+
+### Sound ###
+# Raise Volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+ && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
+# Lower Volume
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%- && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
+bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle-mute # Toggle muting
+
+
 # in case you want to use dual screens
 # exec --no-startup-id xrandr --output HDMI2 --auto --output VGA1 --auto --right-of HDMI2 --output VGA1 --auto --right-of HDMI2
+
