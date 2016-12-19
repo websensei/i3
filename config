@@ -217,8 +217,8 @@ for_window [window_role="task_dialog"] floating enable
 for_window [title="Preferences$"] floating enable
 
 smart_gaps on
-gaps inner 5
-gaps outer 5
+gaps inner 1
+gaps outer 1
 
 # in case you want to use dual screens
 # exec --no-startup-id xrandr --output HDMI2 --auto --output VGA1 --auto --right-of HDMI2 --output VGA1 --auto --right-of HDMI2
