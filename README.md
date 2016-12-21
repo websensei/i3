@@ -1,6 +1,6 @@
 # i3 wm (window manager) example config files
 
-![Alt text](screen.png?raw=true "Optional Title")
+![i3 example](screen.png?raw=true "Desktop preview")
 
 tested and best works with:
 
