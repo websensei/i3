@@ -1,5 +1,7 @@
 # i3 wm (window manager) example config files
 
+![Alt text](screen.png?raw=true "Optional Title")
+
 tested and best works with:
 
 - i3 4.11
