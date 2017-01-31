@@ -1,4 +1,5 @@
 # i3 wm (window manager) example config files
+A better tiling and dynamic window manager
 
 ![i3 example](screen.png?raw=true "Desktop preview")
 
