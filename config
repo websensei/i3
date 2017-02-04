@@ -14,8 +14,7 @@ set $urgent-bg-color     #A4886C
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
-#bindsym $mod+Return exec /usr/local/bin/termite
+bindsym $mod+Return exec dbus-launch gnome-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -177,7 +176,9 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 #exec --no-startup-id nm-applet
 #exec --no-startup-id feh --bg ~/.config/i3/desktop.png
 exec --no-startup-id feh --bg-fill ~/.config/i3/desktop.jpg
-exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/termite; workspace 1; exec /usr/local/bin/termite;'
+exec --no-startup-id i3-msg 'workspace 1; exec dbus-launch gnome-terminal;'
+exec --no-startup-id firefox
+
 
 # Window decorations
 hide_edge_borders both
