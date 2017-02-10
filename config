@@ -177,7 +177,8 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 #exec --no-startup-id feh --bg ~/.config/i3/desktop.png
 exec --no-startup-id feh --bg-fill ~/.config/i3/desktop.jpg
 exec --no-startup-id i3-msg 'workspace 1; exec dbus-launch gnome-terminal;'
-exec --no-startup-id firefox
+exec --no-startup-id google-chrome-stable
+exec --no-startup-id teams
 
 
 # Window decorations
