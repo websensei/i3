@@ -87,17 +87,17 @@ set $workspace4 4:
 set $workspace5 5:
 set $workspace6 6:
 
-assign [class="(?i)slack"] $workspace1
+assign [class="(?i)teams"] $workspace1
 assign [class="(?i)vlc"] $workspace5
 assign [class="(?i)pycharm"] → $workspace3
 assign [class="(?i)nautilus"] → $workspace4
 assign [class="(?i)audacious"] → $workspace5
 assign [class="(?i)feh"] → $workspace6
 assign [class="(?i)firefox"] → $workspace2
-assign [class="(?i)chromium"] → $workspace2
-assign [class="(?i)transmission-gtk"] → $workspace2
+assign [class="(?i)google-chrome-stable"] → $workspace2
+assign [class="(?i)transmission-gtk"] → $workspace4
 assign [class="(?i)gimp"] → $workspace6
-assign [class="(?i)Java iKVM Viewer"] → $workspace2
+assign [class="(?i)Java iKVM Viewer"] → $workspace1
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -223,4 +223,4 @@ bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle-mu
 #gaps outer 1
 
 # in case you want to use dual screens
-# exec --no-startup-id xrandr --output HDMI2 --auto --output VGA1 --auto --right-of HDMI2 --output VGA1 --auto --right-of HDMI2
+ exec --no-startup-id xrandr --output HDMI2 --auto --output VGA1 --auto --right-of HDMI2 --output VGA1 --auto --right-of HDMI2
