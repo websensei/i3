@@ -3,6 +3,10 @@ A better tiling and dynamic window manager
 
 ![i3 example](screen.png?raw=true "Desktop preview")
 
+Required packages:
+
+- Fontawesome
+
 tested and best works with:
 
 - i3, version: 4.13
