@@ -225,4 +225,4 @@ bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle-mu
 #gaps outer 1
 
 # in case you want to use dual screens
- exec --no-startup-id xrandr --output HDMI2 --auto --output VGA1 --auto --right-of HDMI2 --output VGA1 --auto --right-of HDMI2
+xrandr --output VGA1 --auto --output HDMI2 --auto --right-of VGA1 --output HDMI2 --auto --right-of VGA1
