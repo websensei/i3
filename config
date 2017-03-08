@@ -80,24 +80,26 @@ bindsym $mod+a focus parent
 
 # workspace settings
 
-set $workspace1 1:
-set $workspace2 2:
+
+set $workspace2 1:
+set $workspace1 2:
 set $workspace3 3:
 set $workspace4 4:
 set $workspace5 5:
 set $workspace6 6:
 
-assign [class="(?i)teams"] $workspace1
+assign [class="(?i)teams"] $workspace2
 assign [class="(?i)vlc"] $workspace5
 assign [class="(?i)pycharm"] → $workspace3
 assign [class="(?i)nautilus"] → $workspace4
 assign [class="(?i)audacious"] → $workspace5
 assign [class="(?i)feh"] → $workspace6
-assign [class="(?i)firefox"] → $workspace2
-assign [class="(?i)google-chrome-stable"] → $workspace2
+assign [class="(?i)firefox"] → $workspace1
+assign [class="(?i)google-chrome"] → $workspace1
+assign [class="(?i)google-chrome-stable"] → $workspace1
 assign [class="(?i)transmission-gtk"] → $workspace4
 assign [class="(?i)gimp"] → $workspace6
-assign [class="(?i)Java iKVM Viewer"] → $workspace1
+assign [class="(?i)Java iKVM Viewer"] → $workspace2
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
