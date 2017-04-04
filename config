@@ -14,7 +14,7 @@ set $urgent-bg-color     #A4886C
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec dbus-launch gnome-terminal
+bindsym $mod+Return exec lilyterm
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -80,8 +80,8 @@ bindsym $mod+a focus parent
 
 # workspace settings
 
-set $workspace1 1:
-set $workspace2 2:
+set $workspace1 1:
+set $workspace2 2:
 set $workspace3 3:
 set $workspace4 4:
 set $workspace5 5:
@@ -94,6 +94,7 @@ assign [class="(?i)nautilus"] → $workspace4
 assign [class="(?i)audacious"] → $workspace5
 assign [class="(?i)feh"] → $workspace6
 assign [class="(?i)firefox"] → $workspace1
+assign [class="(?i)vivaldi"] → $workspace1
 assign [class="(?i)google-chrome"] → $workspace1
 assign [class="(?i)google-chrome-stable"] → $workspace1
 assign [class="(?i)transmission-gtk"] → $workspace4
