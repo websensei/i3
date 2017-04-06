@@ -94,7 +94,6 @@ assign [class="(?i)nautilus"] → $workspace4
 assign [class="(?i)audacious"] → $workspace5
 assign [class="(?i)feh"] → $workspace6
 assign [class="(?i)firefox"] → $workspace1
-assign [class="(?i)vivaldi"] → $workspace1
 assign [class="(?i)google-chrome"] → $workspace1
 assign [class="(?i)google-chrome-stable"] → $workspace1
 assign [class="(?i)transmission-gtk"] → $workspace4
