@@ -204,7 +204,7 @@ bindsym XF86MonBrightnessUp exec light -A 10 # Increase Brightness
 bindsym XF86MonBrightnessDown exec light -U 10 # Decrease Brightness
 
 ### Other ###
-bindsym Print exec scrot -q 100
+bindsym Print exec gnome-screenshot
 
 ### Sound ###
 # Raise Volume
