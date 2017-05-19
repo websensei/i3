@@ -13,4 +13,4 @@ tested and best works with:
 - i3status, version: 2.10
 - i3lock, version: 2.7
 - FontAwesome 4.7
-- Gnome terminal
+- lilyterm 
