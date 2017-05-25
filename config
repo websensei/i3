@@ -82,14 +82,16 @@ bindsym $mod+a focus parent
 
 set $workspace1 1:
 set $workspace2 2:
-set $workspace3 3:
+set $workspace3 3:
 set $workspace4 4:
 set $workspace5 5:
-set $workspace6 6:
+set $workspace6 6:
+
 
 assign [class="(?i)teams"] $workspace2
 assign [class="(?i)vlc"] $workspace5
-assign [class="(?i)pycharm"] → $workspace3
+assign [class="(?i)teams"] $workspace2
+assign [class="(?i)atom"] → $workspace6
 assign [class="(?i)nautilus"] → $workspace4
 assign [class="(?i)audacious"] → $workspace5
 assign [class="(?i)feh"] → $workspace6
@@ -182,6 +184,7 @@ exec --no-startup-id feh --bg-fill ~/.config/i3/desktop.jpg
 #exec --no-startup-id teams
 exec --no-startup-id "setxkbmap -model pc104 -layout us,lt -option grp:alt_shift_toggle"
 exec --no-startup-id dropbox
+exec --no-startup-id sylpheed
 
 # Window decorations
 hide_edge_borders both
