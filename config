@@ -86,12 +86,13 @@ set $workspace3 3:
 set $workspace4 4:
 set $workspace5 5:
 set $workspace6 6:
-
+set $workspace7 7:
 
 assign [class="(?i)teams"] $workspace2
 assign [class="(?i)vlc"] $workspace5
 assign [class="(?i)nylas-mail"] $workspace2
 assign [class="(?i)atom"] → $workspace6
+assign [class="(?i)virtualbox"] → $workspace7
 assign [class="(?i)nautilus"] → $workspace4
 assign [class="(?i)audacious"] → $workspace5
 assign [class="(?i)feh"] → $workspace6
