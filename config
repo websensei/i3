@@ -80,25 +80,25 @@ bindsym $mod+a focus parent
 
 # workspace settings
 
-set $workspace1 1:
-set $workspace2 2:
+set $workspace2 2:
+set $workspace1 1:
 set $workspace3 3:
 set $workspace4 4:
 set $workspace5 5:
 set $workspace6 6:
 set $workspace7 7:
 
-assign [class="(?i)teams"] $workspace2
+assign [class="(?i)teams"] $workspace1
 assign [class="(?i)vlc"] $workspace5
-assign [class="(?i)nylas-mail"] $workspace2
-assign [class="(?i)atom"] → $workspace6
+assign [class="(?i)nylas-mail"] $workspace1
+assign [class="(?i)code"] → $workspace2
 assign [class="(?i)virtualbox"] → $workspace7
 assign [class="(?i)nautilus"] → $workspace4
 assign [class="(?i)audacious"] → $workspace5
 assign [class="(?i)feh"] → $workspace6
 assign [class="(?i)firefox"] → $workspace1
-assign [class="(?i)google-chrome"] → $workspace1
-assign [class="(?i)google-chrome-stable"] → $workspace1
+assign [class="(?i)google-chrome"] → $workspace2
+assign [class="(?i)google-chrome-stable"] → $workspace2
 assign [class="(?i)transmission-gtk"] → $workspace4
 assign [class="(?i)gimp"] → $workspace6
 assign [class="(?i)Java iKVM Viewer"] → $workspace2
@@ -199,6 +199,9 @@ for_window [class="(?i)Java iKVM Viewer"] floating enable
 # Custom key bindings
 bindsym $mod+m bar mode toggle #hide i3status
 bindsym $mod+Shift+e exec i3lock -c 000000 -i ~/.config/i3/lock.png
+bindsym $mod+Shift+n exec nautilus #file manager
+bindsym Print exec gnome-screenshot #screenshot
+
 
 # toggle tiling / floating
 bindcode $mod+Shift+space floating toggle
@@ -206,9 +209,6 @@ bindcode $mod+Shift+space floating toggle
 ### Backlight ###
 bindsym XF86MonBrightnessUp exec light -A 10 # Increase Brightness
 bindsym XF86MonBrightnessDown exec light -U 10 # Decrease Brightness
-
-### Other ###
-bindsym Print exec gnome-screenshot
 
 ### Sound ###
 # Raise Volume
@@ -230,4 +230,5 @@ bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle-mu
 #gaps outer 1
 
 # in case you want to use dual screens
-exec --no-startup-id xrandr --output VGA1 --auto --output HDMI2 --auto --right-of VGA1 --output HDMI2 --auto --right-of VGA1
+exec --no-startup-id xrandr --output VGA-1 --auto --output HDMI-2 --auto --right-of VGA-1 --output HDMI-2 --auto --right-of VGA-1
+
