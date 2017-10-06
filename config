@@ -201,7 +201,7 @@ bindsym $mod+m bar mode toggle #hide i3status
 bindsym $mod+Shift+e exec i3lock -c 000000 -i ~/.config/i3/lock.png
 bindsym $mod+Shift+n exec nautilus #file manager
 bindsym Print exec gnome-screenshot #screenshot
-
+bindsym $mod+Shift+k exec xkill
 
 # toggle tiling / floating
 bindcode $mod+Shift+space floating toggle
