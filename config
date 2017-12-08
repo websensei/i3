@@ -95,13 +95,14 @@ assign [class="(?i)code"] → $workspace2
 assign [class="(?i)virtualbox"] → $workspace7
 assign [class="(?i)nautilus"] → $workspace4
 assign [class="(?i)audacious"] → $workspace5
+assign [class="(?i)spotify"] → $workspace5
 assign [class="(?i)feh"] → $workspace6
 assign [class="(?i)firefox"] → $workspace1
 assign [class="(?i)google-chrome"] → $workspace2
 assign [class="(?i)google-chrome-stable"] → $workspace2
 assign [class="(?i)transmission-gtk"] → $workspace4
 assign [class="(?i)gimp"] → $workspace6
-assign [class="(?i)Java iKVM Viewer"] → $workspace2
+assign [class="(?i)Java iKVM Viewer"] → $workspace1
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -183,7 +184,7 @@ exec --no-startup-id feh --bg-fill ~/.config/i3/desktop.jpg
 #exec --no-startup-id i3-msg 'workspace 1; exec dbus-launch gnome-terminal;'
 #exec --no-startup-id google-chrome-stable
 #exec --no-startup-id teams
-exec --no-startup-id "setxkbmap -model pc104 -layout us,lt -option grp:alt_shift_toggle"
+exec --no-startup-id setxkbmap -model pc104 -layout us,lt -option grp:alt_shift_toggle
 exec --no-startup-id teams
 exec --no-startup-id nylas-mail
 
@@ -201,7 +202,7 @@ bindsym $mod+m bar mode toggle #hide i3status
 bindsym $mod+Shift+e exec i3lock -c 000000 -i ~/.config/i3/lock.png
 bindsym $mod+Shift+n exec nautilus #file manager
 bindsym Print exec gnome-screenshot #screenshot
-bindsym $mod+Shift+k exec xkill
+#bindsym $mod+Shift+k exec xkill
 
 # toggle tiling / floating
 bindcode $mod+Shift+space floating toggle
@@ -212,10 +213,13 @@ bindsym XF86MonBrightnessDown exec light -U 10 # Decrease Brightness
 
 ### Sound ###
 # Raise Volume
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+ && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
+#bindsym $mod+Shift+Pageup exec --no-startup-id amixer -D pulse sset Master 5%+ && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
+#for dedicated keyboard button use XF86AudioRaiseVolume 
 # Lower Volume
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%- && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
+#bindsym $mod+Pagedown exec --no-startup-id amixer -D pulse sset Master 5%- && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
+#for dedicated keyboard button use 
 bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle-mute # Toggle muting
+#for dedicated keyboard button use 
 
 ########## i3-gaps integration ##########
 
